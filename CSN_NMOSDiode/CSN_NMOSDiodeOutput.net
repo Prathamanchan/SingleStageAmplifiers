@@ -1,0 +1,14 @@
+* C:\users\karmic\Desktop\Amplifiers Simulations\SingleStageAmplifiers\CSN_NMOSDiode\CSN_NMOSDiodeOutput.asc
+V1 Vin 0 SINE(1.5 0.5 10)
+V2 VDD 0 5
+M1 Vout Vin 0 0 test l=1u w=3u
+M2 VDD VDD Vout Vout test1 l=1u w=1u
+.model NMOS NMOS
+.model PMOS PMOS
+.lib C:\users\karmic\My Documents\LTspiceXVII\lib\cmp\standard.mos
+;.dc V1 0 5 0.01
+.model test nmos(kp=90u vto=0.7v)
+.model test1 nmos(kp=90u vto=0.7v)
+.tran 0 1 0 0.1
+.backanno
+.end
